@@ -368,7 +368,7 @@ p {
   width: 26px;
   height: 26px;
   cursor: pointer;
-  z-index: 9;
+  z-index: 1000;
   margin: 20px;
   display: none;
 }
@@ -430,6 +430,41 @@ header {
   }
 
   .menu-btn {
+    display: block;
+  }
+
+  .mobile-logo {
+    display: block;
+    text-align: center;
+    padding: 20px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    z-index: 999;
+  }
+
+  .mobile-logo img {
+    height: 50px;
+    width: auto;
+  }
+
+  .desktop-logo {
+    display: none;
+  }
+
+  main {
+    margin-top: 90px !important; /* Adjust based on your logo height */
+  }
+}
+
+@media (min-width: 992px) {
+  .mobile-logo {
+    display: none;
+  }
+
+  .desktop-logo {
     display: block;
   }
 }
