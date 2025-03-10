@@ -469,7 +469,68 @@ header {
   }
 }
 
+/* Adjust the existing or add new logo styles */
 
+/* Mobile logo styles */
+.mobile-logo {
+    display: none;
+    text-align: center;
+    padding: 15px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    z-index: 999;
+}
+
+.mobile-logo img {
+    height: 40px;
+    width: auto;
+}
+
+/* Desktop logo styles */
+.desktop-logo {
+    display: block;
+}
+
+.desktop-logo img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Media queries for responsive behavior */
+@media (max-width: 991px) {
+    .mobile-logo {
+        display: block;
+    }
+    
+    .desktop-logo {
+        display: none;
+    }
+
+    main {
+        margin-top: 70px !important; /* Adjust based on your mobile logo height */
+    }
+
+    .menu-btn {
+        display: block;
+        position: fixed;
+        top: 15px;
+        right: 15px;
+        z-index: 1000;
+    }
+}
+
+@media (min-width: 992px) {
+    .mobile-logo {
+        display: none;
+    }
+    
+    .desktop-logo {
+        display: block;
+    }
+}
 
 /* ----------  potrait section  ----------  */
 
