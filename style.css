@@ -307,7 +307,7 @@ p {
   content: '';
   position: absolute;
   bottom: -2px;
-  background: #A7BED7; /* Changed from var(--bs-dark) to #A7BED7 */
+  background: var(--bs-dark);
   height: 2px;
   width: 0;
   transition: width 0.6s ease-out;

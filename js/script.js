@@ -227,6 +227,24 @@
 
   });
 
+  // Language switcher functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const langLinks = document.querySelectorAll('.language-switcher .nav-link');
+    
+    langLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            // Remove active class from all links
+            langLinks.forEach(l => l.classList.remove('active'));
+            // Add active class to clicked link
+            this.classList.add('active');
+            
+            const lang = this.getAttribute('data-lang');
+            // Here you can add logic to switch language
+            // switchLanguage(lang);
+        });
+    });
+  });
 
   // window load
   $(window).load(function () {
