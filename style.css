@@ -368,7 +368,7 @@ p {
   width: 26px;
   height: 26px;
   cursor: pointer;
-  z-index: 1000;
+  z-index: 1030;
   margin: 20px;
   display: none;
 }
@@ -431,6 +431,8 @@ header {
 
   .menu-btn {
     display: block;
+    top: 20px;
+    right: 20px;
   }
 
   .mobile-logo {
@@ -457,6 +459,28 @@ header {
   main {
     margin-top: 90px !important; /* Adjust based on your logo height */
   }
+
+  .language-switcher-container {
+    top: 70px; /* Position below menu button */
+    right: 20px;
+  }
+
+  #header-nav {
+    padding-top: 20px !important; /* Reduced padding since we removed the large logo */
+  }
+
+  .mobile-logo {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1029;
+    display: block;
+  }
+
+  .mobile-logo img {
+    max-height: 40px;
+    width: auto;
+  }
 }
 
 @media (min-width: 992px) {
@@ -467,25 +491,30 @@ header {
   .desktop-logo {
     display: block;
   }
+
+  .menu-btn {
+    display: none;
+  }
+
+  .language-switcher-container {
+    top: 20px;
+    right: 40px;
+  }
 }
 
 /* Adjust the existing or add new logo styles */
 
 /* Mobile logo styles */
 .mobile-logo {
-    display: none;
-    text-align: center;
-    padding: 15px 0;
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background: white;
-    z-index: 999;
+    top: 20px;
+    left: 20px;
+    z-index: 1020; /* Lower than menu button */
+    display: none; /* Hide by default on desktop */
 }
 
 .mobile-logo img {
-    height: 40px;
+    max-height: 40px;
     width: auto;
 }
 
@@ -499,26 +528,57 @@ header {
     height: auto;
 }
 
+/* Desktop logo styling */
+.site-logo {
+    max-width: 100%;
+    padding: 20px 0;
+}
+
+.site-logo img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Mobile/Desktop visibility */
+@media (max-width: 991px) {
+    .site-logo {
+        display: none !important;
+    }
+    
+    .mobile-logo {
+        display: block;
+    }
+}
+
+@media (min-width: 992px) {
+    .site-logo {
+        display: block;
+    }
+    
+    .mobile-logo {
+        display: none;
+    }
+}
+
 /* Media queries for responsive behavior */
 @media (max-width: 991px) {
     .mobile-logo {
         display: block;
     }
     
-    .desktop-logo {
-        display: none;
+    /* Adjust menu positioning */
+    #header-nav {
+        padding-top: 80px !important; /* Add space for logo */
     }
-
-    main {
-        margin-top: 70px !important; /* Adjust based on your mobile logo height */
+    
+    /* Ensure menu items don't get hidden */
+    .navigation {
+        margin-top: 20px;
     }
-
-    .menu-btn {
-        display: block;
-        position: fixed;
-        top: 15px;
-        right: 15px;
-        z-index: 1000;
+    
+    /* Adjust vertical menu spacing */
+    .vertical-menu {
+        margin-top: 0 !important;
     }
 }
 
@@ -529,6 +589,15 @@ header {
     
     .desktop-logo {
         display: block;
+    }
+
+    .menu-btn {
+        display: none;
+    }
+
+    .language-switcher-container {
+        top: 20px;
+        right: 40px;
     }
 }
 
@@ -1050,5 +1119,146 @@ img {
 @media (min-width: 992px) {
     .isotope-container .item {
         width: 25%; /* Changes from 33.333% (col-md-4) to 25% for 4 columns */
+    }
+}
+
+/* Language Switcher */
+.language-switcher-container {
+    position: fixed;
+    z-index: 1029; /* Just below menu button z-index */
+    top: 20px;
+    right: 40px;
+    background-color: transparent;
+    padding: 8px;
+}
+
+.dropdown-toggle {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    text-decoration: none;
+    color: #333;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.dropdown-toggle:hover,
+.dropdown-toggle:focus {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.flag {
+    display: inline-block;
+    width: 24px;
+    height: 16px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.flag-united-kingdom {
+    background-image: url('./images/flags/gb.svg');
+}
+
+.flag-lithuania {
+    background-image: url('./images/flags/lt.svg');
+}
+
+.dropdown-menu {
+    min-width: 160px;
+    margin-top: 8px;
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
+}
+
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    color: #333;
+}
+
+.dropdown-item .flag {
+    margin-right: 8px;
+}
+
+/* Casting Table Styles */
+.casting-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-family: 'Albert Sans', sans-serif;
+    min-width: 800px; /* Increased to accommodate new column */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.casting-table thead tr {
+    background-color: #A7BED7;
+    color: #ffffff;
+    text-align: left;
+}
+
+.casting-table th,
+.casting-table td {
+    padding: 15px 20px;
+}
+
+.casting-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.casting-table tbody tr:nth-of-type(even) {
+    background-color: #f8f9fa;
+}
+
+.casting-table tbody tr:last-of-type {
+    border-bottom: 2px solid #A7BED7;
+}
+
+.casting-table tbody tr:hover {
+    background-color: #f1f4f7;
+    cursor: pointer;
+}
+
+.apply-button {
+    background-color: #A7BED7;
+    color: white;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.apply-button:hover {
+    background-color: #8BA5BE;
+}
+
+/* Responsive table */
+@media (max-width: 767px) {
+    .casting-table {
+        min-width: 100%;
+        font-size: 14px;
+    }
+    
+    .casting-table th,
+    .casting-table td {
+        padding: 10px 15px;
+    }
+}
+
+@media (max-width: 991px) {
+    .casting-table {
+        font-size: 14px;
+    }
+    
+    .casting-table th,
+    .casting-table td {
+        padding: 8px 12px;
     }
 }
