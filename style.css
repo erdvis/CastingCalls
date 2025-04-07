@@ -741,6 +741,37 @@ img {
   transform: translateY(-100px);
 }
 
+/* Update portfolio image styles */
+.portfolio-img {
+    width: 100%;
+    aspect-ratio: 1/1; /* Makes images square */
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s ease;
+}
+
+.item {
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+/* Maintain square aspect ratio on all screen sizes */
+@media (max-width: 991px) {
+    .portfolio-img {
+        aspect-ratio: 1/1;
+        height: auto;
+    }
+}
+
+@media (max-width: 767px) {
+    .portfolio-img {
+        aspect-ratio: 1/1;
+        height: auto;
+    }
+}
+
 /* portrait section */
 .portrait-container {
     flex-shrink: 0;
