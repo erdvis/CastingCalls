@@ -5,32 +5,7 @@
   // ------------------------------------------------------------------------------ //
   // Overlay Menu Navigation
   // ------------------------------------------------------------------------------ //
-  var overlayMenu = function () {
-
-    if (!$('.nav-overlay').length) {
-      return false;
-    }
-
-    var body = undefined;
-    var menu = undefined;
-    var menuItems = undefined;
-    var init = function init() {
-      body = document.querySelector('body');
-      menu = document.querySelector('.menu-btn');
-      menuItems = document.querySelectorAll('.nav__list-item');
-      applyListeners();
-    };
-    var applyListeners = function applyListeners() {
-      menu.addEventListener('click', function () {
-        return toggleClass(body, 'nav-active');
-      });
-    };
-    var toggleClass = function toggleClass(element, stringClass) {
-      if (element.classList.contains(stringClass)) element.classList.remove(stringClass); else element.classList.add(stringClass);
-    };
-    init();
-  }
-
+  // Remove or comment out the old overlayMenu function and mobile menu click handler
 
   
   // Portfolio Slider
@@ -167,8 +142,6 @@
 
   $(document).ready(function () {
 
-    overlayMenu();
-    
     // Video popup handler
     $('.video-link').click(function(e) {
       e.preventDefault();
@@ -214,12 +187,6 @@
     initTextFx();
     initChocolat();
 
-    // mobile menu
-    $('.menu-btn').click(function (e) {
-      e.preventDefault();
-      $('body').toggleClass('nav-active');
-    });
-
     AOS.init({
       duration: 1200,
       // once: true,
@@ -248,34 +215,58 @@
 
   // Mobile menu functionality
   document.addEventListener('DOMContentLoaded', function() {
-    // Get all menu links
     const menuLinks = document.querySelectorAll('#one-page-menu .nav-link');
+    const header = document.querySelector('header');
+    const body = document.body;
+    const menuBtn = document.querySelector('.menu-btn');
     
-    // Get the header element
-    const header = document.getElementById('header-nav');
-    
-    // Function to close mobile menu
-    function closeMobileMenu() {
-        if (window.innerWidth < 992) { // Only on mobile
-            header.classList.remove('menu-visible');
-            document.body.classList.remove('menu-open');
+    // Toggle menu function
+    function toggleMenu(e) {
+        if (e) e.preventDefault();
+        
+        if (!body.classList.contains('nav-active')) {
+            // Opening menu
+            header.style.transform = 'translate3d(0, 0, 0)';
+            body.classList.add('nav-active');
+            menuBtn.classList.add('active');
+        } else {
+            // Closing menu
+            header.style.transform = 'translate3d(-100%, 0, 0)';
+            body.classList.remove('nav-active');
+            menuBtn.classList.remove('active');
         }
     }
     
-    // Add click event to each menu link
+    // Function to close mobile menu
+    function closeMobileMenu() {
+        if (window.innerWidth < 992) {
+            header.style.transform = 'translate3d(-100%, 0, 0)';
+            body.classList.remove('nav-active');
+            menuBtn.classList.remove('active');
+        }
+    }
+    
+    // Remove old event listener and add new one
+    menuBtn.removeEventListener('click', toggleMenu);
+    menuBtn.addEventListener('click', toggleMenu);
+    
+    // Update menu links click handling
     menuLinks.forEach(link => {
         link.addEventListener('click', function(e) {
-            // Close the mobile menu
-            closeMobileMenu();
-            
-            // Small delay to allow smooth transition
-            setTimeout(() => {
+            if (window.innerWidth < 992) {
+                closeMobileMenu();
+                
                 const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                if (targetId.startsWith('#')) {
+                    e.preventDefault();
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        setTimeout(() => {
+                            targetElement.scrollIntoView({ behavior: 'smooth' });
+                        }, 300);
+                    }
                 }
-            }, 300);
+            }
         });
     });
   });

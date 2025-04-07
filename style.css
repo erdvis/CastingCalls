@@ -110,6 +110,7 @@ p {
 .dropdown-menu {
   --bs-dropdown-border-radius: 0;
   --bs-dropdown-border-width: 0;
+  background-color: #d7e6f5;
 }
 
 .dropdown-item {
@@ -416,6 +417,10 @@ header {
   top: 0;
 }
 
+#header-nav {
+  background-color: #d7e6f5 !important;
+}
+
 @media (max-width: 991px) {
 
   /* mobile menu */
@@ -467,6 +472,11 @@ header {
 
   #header-nav {
     padding-top: 20px !important; /* Reduced padding since we removed the large logo */
+    background-color: #d7e6f5 !important;
+  }
+
+  .menu-visible {
+    background-color: #d7e6f5 !important;
   }
 
   .mobile-logo {
@@ -537,6 +547,57 @@ header {
 .site-logo img {
     max-width: 100%;
     height: auto;
+}
+
+/* Logo fade effect */
+.site-logo {
+    position: relative;
+    width: 100%;
+}
+
+.site-logo::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        to right,
+        #d7e6f5 0%,
+        transparent 10%,
+        transparent 90%,
+        #d7e6f5 100%
+    );
+    pointer-events: none;
+}
+
+.site-logo img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Mobile logo fade effect */
+.mobile-logo {
+    position: relative;
+}
+
+.mobile-logo::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        to right,
+        #BCD2E8 0%,
+        transparent 20%,
+        transparent 80%,
+        #BCD2E8 100%
+    );
+    pointer-events: none;
 }
 
 /* Mobile/Desktop visibility */
@@ -1260,5 +1321,55 @@ img {
     .casting-table th,
     .casting-table td {
         padding: 8px 12px;
+    }
+}
+
+/* Update header layout */
+.header-wrap {
+    justify-content: flex-start !important;
+    gap: 0 !important;
+}
+
+/* Remove extra margins */
+.navigation {
+    margin-bottom: 0;
+}
+
+.vertical-menu {
+    margin-top: 2rem !important;
+    margin-bottom: 1rem !important;
+}
+
+.language-switcher {
+    margin-top: 0 !important;
+    margin-bottom: 1rem !important;
+}
+
+.email-links {
+    margin-top: 1rem !important;
+}
+
+.social-links {
+    margin-top: 0.5rem !important;
+}
+
+/* Adjust menu items spacing */
+.menu-list .pb-3 {
+    padding-bottom: 0.5rem !important;
+}
+
+/* Remove extra space above email section */
+.mt-5 {
+    margin-top: 1rem !important;
+}
+
+/* Desktop specific adjustments */
+@media (min-width: 992px) {
+    .site-logo.my-5 {
+        margin-bottom: 2rem !important;
+    }
+    
+    .vertical-menu.my-5 {
+        margin-top: 0 !important;
     }
 }

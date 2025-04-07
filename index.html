@@ -29,28 +29,6 @@
 </head>
 
 <body class="bg-body homepage post-template" data-bs-spy="scroll" data-bs-target="#header-nav" tabindex="0">
-  <div class="language-switcher-container">
-    <div class="dropdown">
-        <button class="dropdown-toggle btn" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-            <img src="images/flags/lt.svg" alt="Lietuvių" class="flag" />
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="languageDropdown">
-            <li>
-                <a class="dropdown-item active" href="#" data-lang="lt">
-                    <img src="images/flags/lt.svg" alt="Lietuvių" class="flag" />
-                    Lietuvių
-                </a>
-            </li>
-            <li><hr class="dropdown-divider"></li>
-            <li>
-                <a class="dropdown-item" href="#" data-lang="en">
-                    <img src="images/flags/gb.svg" alt="English" class="flag" />
-                    English
-                </a>
-            </li>
-        </ul>
-    </div>
-  </div>
   <div class="mobile-logo">
     <a href="index.html">
       <img src="images/main-logo.png" alt="logo" />
@@ -202,7 +180,54 @@
               </li>
               
             </ul>
+            
+            <!-- Add desktop language switcher -->
+            <div class="language-switcher d-none d-lg-block">
+              <div class="dropdown">
+                <button class="dropdown-toggle btn" type="button" id="languageDropdownDesktop" data-bs-toggle="dropdown" aria-expanded="false">
+                  <img src="images/flags/lt.svg" alt="Lietuvių" class="flag" />
+                  <span>Lietuvių</span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="languageDropdownDesktop">
+                  <li>
+                    <a class="dropdown-item active" href="#" data-lang="lt">
+                      <img src="images/flags/lt.svg" alt="Lietuvių" class="flag" />
+                      Lietuvių
+                    </a>
+                  </li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li>
+                    <a class="dropdown-item" href="#" data-lang="en">
+                      <img src="images/flags/gb.svg" alt="English" class="flag" />
+                      English
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </nav>
+          <div class="language-switcher-mobile d-lg-none">
+            <div class="dropdown">
+              <button class="dropdown-toggle btn" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="images/flags/lt.svg" alt="Lietuvių" class="flag" />
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                <li>
+                  <a class="dropdown-item active" href="#" data-lang="lt">
+                    <img src="images/flags/lt.svg" alt="Lietuvių" class="flag" />
+                    Lietuvių
+                  </a>
+                </li>
+                <li><hr class="dropdown-divider"></li>
+                <li>
+                  <a class="dropdown-item" href="#" data-lang="en">
+                    <img src="images/flags/gb.svg" alt="English" class="flag" />
+                    English
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
         <div class="mt-5">
           <div class="email-links">
@@ -327,11 +352,11 @@
               </a>
             </div>
             <!-- Occupied -->
-            <div class="item branding col-md-3">
+            <div class="item branding col-md-3" title="Occupied">
               <a href="https://www.youtube.com/embed/yfqRRHaFyJg" 
                  class="video-link" 
                  title="Occupied">
-                <img class="portfolio-img" src="images/portfolio2.jpg" alt="image" />
+                <img class="portfolio-img" src="images/portfolio2.jpg" alt="Occupied" />
                 <div class="description align-items-center">
                   <h4 class="text-center">Occupied</h4>
                 </div>
@@ -382,11 +407,11 @@
               </a>
             </div>
             <!-- With My Own Eyes -->
-            <div class="item website col-md-3">
+            <div class="item website col-md-3" title="With My Own Eyes">
               <a href="https://www.youtube.com/embed/bKNb84NGFdE" 
                  class="video-link" 
                  title="With My Own Eyes">
-                <img class="portfolio-img" src="images/cast2.jpg" alt="image" />
+                <img class="portfolio-img" src="images/cast2.jpg" alt="With My Own Eyes" />
                 <div class="description align-items-center">
                   <h4 class="text-center">With My Own Eyes</h4>
                 </div>
