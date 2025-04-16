@@ -694,11 +694,7 @@ header {
         margin-top: 0 !important;
     }
 }
-
-@media (min-width: 992px) {
-    .mobile-logo {
-        display: none;
-    }
+    
     
     .desktop-logo {
         display: block;
