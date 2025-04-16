@@ -1635,6 +1635,20 @@ img.portfolio-img {
     transition: all 0.3s ease;
     display: block; /* Changed from inline-block for better consistency */
     width: 100%;
+    font-size: 1rem; /* Updated to 16px base size */
+}
+
+/* Responsive font sizes */
+@media (max-width: 991px) {
+    #one-page-menu .nav-link {
+        font-size: 1.1rem; /* Slightly larger on mobile */
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+    #one-page-menu .nav-link {
+        font-size: 0.9rem; /* Slightly smaller on tablets/small desktops */
+    }
 }
 
 /* Fix layout issues */
