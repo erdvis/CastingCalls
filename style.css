@@ -491,6 +491,33 @@ header {
   display: none;
 }
 
+/* Always hide menu-btn by default */
+.menu-btn {
+  display: none;
+}
+
+/* Show menu-btn only on mobile */
+@media (max-width: 991px) {
+  .menu-btn {
+    display: block !important;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1100;
+    width: 26px;
+    height: 26px;
+    background: none;
+    border: none;
+  }
+}
+
+/* Hide menu-btn on desktop */
+@media (min-width: 992px) {
+  .menu-btn {
+    display: none !important;
+  }
+}
+
 /* ----------  potrait section  ----------  */
 
 img.portfolio-img {
@@ -1080,4 +1107,78 @@ h6,
 .nav-link:focus::after,
 .nav-link.active::after {
   width: 100%;
+}
+
+/* Scale down menu bar (font size and spacing) on desktop only */
+@media (min-width: 992px) {
+  .nav-link {
+    font-size: 0.875rem !important; /* 70% of 1.25rem */
+    padding-top: 0.25rem !important;
+    padding-bottom: 0.25rem !important;
+    letter-spacing: 0.01em;
+  }
+  .menu-list .pb-3 {
+    padding-bottom: 0.25rem !important;
+  }
+}
+
+.menu-btn {
+  display: none;
+}
+@media (max-width: 991px) {
+  .menu-btn {
+    display: block !important;
+  }
+}
+@media (min-width: 992px) {
+  .menu-btn {
+    display: none !important;
+  }
+}
+
+@media (max-width: 991px) {
+  #header-nav {
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 80vw;
+    height: 100vh;
+    background: #fff;
+    z-index: 1200;
+  }
+  #header-nav.open {
+    transform: translateX(0);
+  }
+}
+
+/* Desktop Language Switcher */
+.language-switcher-desktop {
+  position: fixed;
+  top: 24px;
+  right: 32px;
+  z-index: 1200;
+}
+@media (max-width: 991px) {
+  .language-switcher-desktop {
+    display: none !important;
+  }
+}
+.language-switcher-desktop .dropdown-toggle {
+  padding: 2px 8px;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  min-width: 32px;
+}
+.language-switcher-desktop .flag {
+  width: 18px;
+  height: 12px;
+  margin-right: 2px;
+}
+.language-switcher-desktop .dropdown-menu {
+  min-width: 120px;
+  font-size: 0.95rem;
 }

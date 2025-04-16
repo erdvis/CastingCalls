@@ -139,54 +139,31 @@ b  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,
 <a class="nav-link text-uppercase" href="https://mano.castingcalls.lt/">Register</a>
 </li>
 </ul>
-<!-- Add desktop language switcher -->
-<div class="language-switcher d-none d-lg-block">
-  <div class="dropdown">
-    <button class="dropdown-toggle btn" type="button" id="languageDropdownDesktop" data-bs-toggle="dropdown" aria-expanded="false">
-      <img src="images/flags/gb.svg" alt="English" class="flag" />
-      <span>English</span>
-    </button>
-    <ul class="dropdown-menu" aria-labelledby="languageDropdownDesktop">
-      <li>
-        <a class="dropdown-item" href="index.html">
-          <img src="images/flags/lt.svg" alt="Lietuvių" class="flag" />
-          Lietuvių
-        </a>
-      </li>
-      <li><hr class="dropdown-divider"></li>
-      <li>
-        <a class="dropdown-item active" href="index.en.html">
-          <img src="images/flags/gb.svg" alt="English" class="flag" />
-          English
-        </a>
-      </li>
-    </ul>
-  </div>
-</div>
+<!-- Move desktop language switcher out of menu bar -->
 </nav>
-<div class="language-switcher-mobile d-lg-none">
+</div>
+<!-- Desktop language switcher moved to top right -->
+<div class="language-switcher-desktop d-none d-lg-block">
   <div class="dropdown">
-    <button class="dropdown-toggle btn" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-      <img src="images/flags/gb.svg" alt="English" class="flag" />
+    <button class="dropdown-toggle btn btn-sm" type="button" id="languageDropdownDesktop" data-bs-toggle="dropdown" aria-expanded="false">
+      <img src="images/flags/gb.svg" alt="English" class="flag" style="width:18px;height:12px;">
     </button>
-    <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdownDesktop">
       <li>
         <a class="dropdown-item" href="index.html">
-          <img src="images/flags/lt.svg" alt="Lietuvių" class="flag" />
-          Lietuvių
+          <img src="images/flags/lt.svg" alt="Lietuvių" class="flag" style="width:18px;height:12px;"> Lietuvių
         </a>
       </li>
       <li><hr class="dropdown-divider"></li>
       <li>
         <a class="dropdown-item active" href="index.en.html">
-          <img src="images/flags/gb.svg" alt="English" class="flag" />
-          English
+          <img src="images/flags/gb.svg" alt="English" class="flag" style="width:18px;height:12px;"> English
         </a>
       </li>
     </ul>
   </div>
 </div>
-</div>
+<!-- End desktop language switcher -->
 <div class="mt-5">
 <div class="email-links">
 <a class="py-3 my-3 border-bottom border-black d-flex" href="mailto:info@castingcalls.lt">info@castingcalls.lt</a>
