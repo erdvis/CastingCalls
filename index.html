@@ -20,6 +20,7 @@
   <link rel="stylesheet" type="text/css" href="./css/vendor.css" />
   <link rel="stylesheet" type="text/css" href="./style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://db.onlinewebfonts.com/c/b5d2107c7c6e775b13169eb51d8970c1?family=AvertaStd-Light" rel="stylesheet">
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -188,6 +189,21 @@
               </a>
             </div>
             <nav id="one-page-menu" class="vertical-menu my-5">
+              <!-- Mobile language switcher inside menu bar -->
+              <div class="language-switcher-mobile d-block d-lg-none mb-3" style="text-align:center;">
+                <div class="dropdown">
+                  <button class="dropdown-toggle btn btn-sm px-2 py-1" type="button" id="languageDropdownMobile" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 0.9rem;">
+                    <img src="images/flags/lt.svg" alt="Lietuvių" class="flag" style="width:16px;height:10px;"> <span style="font-size:0.9rem;">Lietuvių</span>
+                  </button>
+                  <ul class="dropdown-menu dropdown-menu-start" aria-labelledby="languageDropdownMobile">
+                    <li>
+                      <a class="dropdown-item" href="index.en.html">
+                        <img src="images/flags/gb.svg" alt="English" class="flag" style="width:16px;height:10px;"> English
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
               <ul class="menu-list list-unstyled">
                 
                 <li class="pb-3">
@@ -275,7 +291,9 @@
             <!-- Name and content -->
             <div class="about-content">
               <h4 class="display-5 fw-normal py-4">
-                Andrius Paulavičius
+                <span style="font-family: 'Noto Sans', sans-serif; font-weight: bold; color: #487ca4;">
+                  Andrius Paulavičius
+                </span>
               </h4>
               <div class="container">
                 <div class="row">

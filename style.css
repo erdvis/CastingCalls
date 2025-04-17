@@ -79,6 +79,7 @@ h6,
 /* Base typography */
 body {
     font-family: var(--body-font);
+    zoom: 0.9;
 }
 
 /* Headings */
@@ -92,7 +93,7 @@ h1, h2, h3, h4, h5, h6,
 /* Navigation */
 .nav-link {
     font-family: var(--heading-font) !important;
-    font-size: 1.25rem;
+    font-size: 1rem;
     font-weight: 500;
 }
 
@@ -806,46 +807,103 @@ img.portfolio-img {
 
 /* portrait section */
 .portrait-container {
-    flex-shrink: 0;
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    overflow: hidden;
-    position: relative;
+  flex-shrink: 0;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .portrait-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-.portrait-container:hover .portrait-img {
-    transform: scale(1.1);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 2px 12px rgba(72,124,164,0.10);
+  transition: transform 0.3s ease;
 }
 
 .about-container {
-    display: flex;
-    align-items: flex-start;
-    gap: 40px;
-    margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
 }
 
 .about-content {
-    flex: 1;
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.about-content h4.display-5 {
+  align-self: flex-start;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  /* Optionally adjust line-height for better vertical alignment */
+}
+
+@media (max-width: 991px) {
+  .about-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+  .portrait-container {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 16px;
+  }
+  .portrait-img {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 @media (max-width: 768px) {
-    .portrait-container {
-        width: 200px;
-        height: 200px;
-    }
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+  }
+  .portrait-container {
+    margin-bottom: 1.5rem;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .portrait-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+  }
+  .about-content {
+    align-items: center;
+    text-align: center;
+    padding: 0;
+  }
+}
 
-    .about-container {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+@media (max-width: 768px) {
+  header {
+    margin-top: 1rem !important;
+    margin-bottom: 1rem !important;
+  }
+  .mobile-logo {
+    padding: 8px 0 !important;
+    margin-bottom: 0 !important;
+  }
 }
 
 /* slide in */
@@ -1635,20 +1693,6 @@ img.portfolio-img {
     transition: all 0.3s ease;
     display: block; /* Changed from inline-block for better consistency */
     width: 100%;
-    font-size: 1rem; /* Updated to 16px base size */
-}
-
-/* Responsive font sizes */
-@media (max-width: 991px) {
-    #one-page-menu .nav-link {
-        font-size: 1.1rem; /* Slightly larger on mobile */
-    }
-}
-
-@media (min-width: 992px) and (max-width: 1200px) {
-    #one-page-menu .nav-link {
-        font-size: 0.9rem; /* Slightly smaller on tablets/small desktops */
-    }
 }
 
 /* Fix layout issues */
@@ -1656,3 +1700,24 @@ img.portfolio-img {
     display: block; /* Changed from inline-block to avoid conflict */
     width: 100%;
 }
+
+#one-page-menu .nav-link.active,
+#one-page-menu .nav-link:focus,
+#one-page-menu .nav-link:active {
+  font-weight: 700 !important;
+}
+
+.about-content h4.display-5 {
+  font-size: 1.5rem !important;
+}
+
+@import url('https://db.onlinewebfonts.com/c/b5d2107c7c6e775b13169eb51d8970c1?family=AvertaStd-Light');
+
+body, p, h1, h2, h3, h4, h5, h6, .about-content, .about-container, .text-secondary, .display-5, .fw-normal, .py-4, .container, .row, .col-12, .col-lg-12, .portrait-container, .portrait-img, .casting-table, .accordion, .accordion-body, .accordion-button, .apply-button, .email-links, .social-link, .text-start, .text-center, .text-muted, .bg-text, .table-responsive, .breadcrumb, .dropdown-item, .dropdown-toggle, .form-control, .site-logo, .mobile-logo, .desktop-logo {
+  font-family: "AvertaStd-Light", Arial, sans-serif !important;
+}
+
+#one-page-menu .nav-link, nav.vertical-menu, .menu-list, .menu-btn {
+  font-family: var(--heading-font), 'Noto Sans', Arial, sans-serif !important;
+}
+
