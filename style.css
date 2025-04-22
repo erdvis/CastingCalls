@@ -716,6 +716,19 @@ header {
     }
 }
 
+/* Make the logo bigger only for mobile and tablet */
+@media (max-width: 1200px) {
+  .mobile-logo img,
+  .site-logo img,
+  .desktop-logo img {
+    max-height: 180px !important;
+    height: 180px !important;
+    width: auto !important;
+    display: block;
+    margin: 0 auto;
+  }
+}
+
 /* ----------  potrait section  ----------  */
 
 button.filter-button {
@@ -1719,5 +1732,20 @@ body, p, h1, h2, h3, h4, h5, h6, .about-content, .about-container, .text-seconda
 
 #one-page-menu .nav-link, nav.vertical-menu, .menu-list, .menu-btn {
   font-family: var(--heading-font), 'Noto Sans', Arial, sans-serif !important;
+}
+
+/* FINAL OVERRIDE: Make logo 100px for mobile and tablet, override all previous rules */
+@media (max-width: 1200px) {
+  .mobile-logo img,
+  .site-logo img,
+  .desktop-logo img {
+    max-height: 100px !important;
+    height: 100px !important;
+    width: auto !important;
+    display: block !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    box-sizing: content-box !important;
+  }
 }
 
