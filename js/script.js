@@ -111,6 +111,13 @@
       layoutMode: 'masonry'
     });
 
+    // After Isotope layout, refresh AOS
+    setTimeout(function() {
+      if (window.AOS && typeof window.AOS.refresh === 'function') {
+        window.AOS.refresh();
+      }
+    }, 500);
+
     $(document).ready(function () {
       //active button
       $('.filter-button').click(function () {
@@ -255,7 +262,6 @@
         link.addEventListener('click', function(e) {
             if (window.innerWidth < 992) {
                 closeMobileMenu();
-                
                 const targetId = this.getAttribute('href');
                 if (targetId.startsWith('#')) {
                     e.preventDefault();
@@ -263,6 +269,9 @@
                     if (targetElement) {
                         setTimeout(() => {
                             targetElement.scrollIntoView({ behavior: 'smooth' });
+                            if (window.AOS && typeof window.AOS.refresh === 'function') {
+                                setTimeout(() => { window.AOS.refresh(); }, 400);
+                            }
                         }, 300);
                     }
                 }
